@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from .models import CompanyTool
 
-# Create your views here.
+def tool_list(request):
+    tools = CompanyTool.objects.all()
+    return render(request, "codechallenge3/tools.html", {"tools": tools})

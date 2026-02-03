@@ -1,0 +1,22 @@
+{% extends "codechallenge3/base.html" %}
+
+{% block content %}
+<table border="1">
+    <tr>
+        <th>Tool Name</th>
+        <th>Department</th>
+        <th>Status</th>
+    </tr>
+    {% for tool in tools %}
+    <tr>
+        <td>{{ tool.tool_name }}</td>
+        <td>{{ tool.department }}</td>
+        {% if tool.is_cloud_based %}
+            <td class="cloud">Cloud ☁️</td>
+        {% else %}
+            <td class="local">Local 🖥️</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
